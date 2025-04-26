@@ -1,0 +1,256 @@
+/* ===== PAN-AFRICAN DESIGN SYSTEM ===== */
+:root {
+  /* Garveyite Color Palette */
+  --black-star: #0a0a2a;       /* Deep cosmic navy */
+  --kente-gold: #d4af37;       /* Ancestral wealth */
+  --quantum-glow: #00f0ff;     /* Tech resonance */
+  --diaspora-red: #e83f3f;     /* Revolutionary accent */
+  --ubuntu-beige: #f5f5f0;     /* Earthy readability */
+
+  /* Adinkra-inspired Spacing */
+  --nsibidi-sm: 0.618rem;      /* Golden ratio small */
+  --nsibidi-md: 1.618rem;      /* Golden ratio medium */
+  --nsibidi-lg: 2.618rem;      /* Golden ratio large */
+
+  /* Typography */
+  --adinkra-font: 'PanAfrican', 'Noto Sans Adlam', sans-serif;
+  --dyslexic-font: 'OpenDyslexic', var(--adinkra-font);
+  --proverb-weight: 650;       /* Bold but not oppressive */
+}
+
+/* ===== BASE MANIFESTO STYLES ===== */
+body {
+  background-color: var(--black-star);
+  color: var(--ubuntu-beige);
+  font-family: var(--adinkra-font);
+  line-height: 1.618;          /* Golden ratio for harmony */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ----- Ceremonial Header ----- */
+.manifesto-header {
+  text-align: center;
+  padding: var(--nsibidi-lg) 1rem;
+  background: linear-gradient(
+    180deg, 
+    var(--black-star) 0%, 
+    rgba(10, 10, 42, 0.8) 100%
+  );
+}
+
+.title-line {
+  display: block;
+  font-size: clamp(2rem, 10vw, 4rem);
+  letter-spacing: -0.05em;
+  color: var(--quantum-glow);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.subtitle p {
+  font-size: 1.2rem;
+  margin: var(--nsibidi-sm) auto;
+  max-width: 30ch;
+}
+
+/* ===== MANIFESTO SCROLL ===== */
+.manifesto-scroll {
+  padding: 0 var(--nsibidi-md);
+  max-width: 100vw;
+  hyphens: auto;
+}
+
+.manifesto-section {
+  margin-bottom: var(--nsibidi-lg);
+  scroll-margin-top: 2rem; /* For anchor links */
+}
+
+.manifesto-section h2 {
+  color: var(--kente-gold);
+  font-weight: var(--proverb-weight);
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--diaspora-red);
+  padding-bottom: var(--nsibidi-sm);
+}
+
+.manifesto-line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  margin: var(--nsibidi-md) 0;
+}
+
+.manifesto-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quantum-term {
+  color: var(--quantum-glow);
+  font-weight: bold;
+  cursor: help; /* For glossary tooltips */
+}
+
+.manifesto-list {
+  list-style-type: '→ '; /* African arrow notation */
+  padding-left: var(--nsibidi-md);
+}
+
+/* ===== SIGNING CEREMONY ===== */
+#signing-portal {
+  border: 2px solid var(--kente-gold);
+  border-radius: 8px;
+  padding: var(--nsibidi-md);
+  margin: var(--nsibidi-lg) auto;
+  max-width: 90%;
+  background: rgba(10, 10, 42, 0.8);
+}
+
+#signing-heading {
+  color: var(--quantum-glow);
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.signing-form {
+  display: grid;
+  gap: var(--nsibidi-sm);
+}
+
+input, button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: var(--nsibidi-sm);
+  border-radius: 4px;
+}
+
+#public-key {
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid var(--quantum-glow);
+  color: white;
+}
+
+.ceremonial-button {
+  background: var(--diaspora-red);
+  color: white;
+  border: none;
+  font-weight: var(--proverb-weight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.ceremonial-button:active {
+  transform: scale(0.98);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+/* ===== CREW LOG ===== */
+#crew-log {
+  padding: var(--nsibidi-md);
+  background: rgba(212, 175, 55, 0.1);
+  margin-top: var(--nsibidi-lg);
+}
+
+#crew-log h3 {
+  color: var(--kente-gold);
+  text-align: center;
+}
+
+.crew-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--nsibidi-sm);
+  margin-top: var(--nsibidi-sm);
+}
+
+/* ===== RESPONSIVE LAYERS ===== */
+@media (min-width: 768px) {
+  /* Tablet: Sacred Text Layout */
+  .manifesto-scroll {
+    columns: 2;
+    column-gap: var(--nsibidi-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .manifesto-section {
+    break-inside: avoid;
+  }
+
+  #signing-portal {
+    position: fixed;
+    right: var(--nsibidi-md);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Desktop: Full Afrofuturist Experience */
+  body {
+    background-image: 
+      radial-gradient(
+        circle at 75% 30%,
+        rgba(0, 240, 255, 0.1) 0%,
+        transparent 30%
+      ),
+      url('../afrofuturist_assets/textures/kente_circuit.png');
+    background-size: auto, 30%;
+  }
+
+  .manifesto-scroll {
+    columns: 3;
+    padding-top: var(--nsibidi-lg);
+  }
+}
+
+/* ===== CRITICAL ACCESSIBILITY ===== */
+/* Dyslexia Toggle */
+body.dyslexia-mode {
+  font-family: var(--dyslexic-font);
+  background-color: var(--ubuntu-beige);
+  color: var(--black-star);
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
+.dyslexia-mode .title-line {
+  color: var(--black-star);
+  text-shadow: none;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion) {
+  .manifesto-line {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Voice Control UX */
+@media (speech) {
+  button, input {
+    min-height: 60px;
+  }
+}
+
+/* Right-to-Left Support */
+[dir="rtl"] .manifesto-scroll {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .manifesto-list {
+  list-style-type: '← '; /* Reversed arrow */
+  padding-right: var(--nsibidi-md);
+  padding-left: 0;
+}
